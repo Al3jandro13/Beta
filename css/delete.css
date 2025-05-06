@@ -1,0 +1,72 @@
+/* Contenedor de la tabla */
+.table-container {
+    max-height: 230px; /* Ajustar altura para que no ocupe mucho espacio */
+    overflow-y: auto; /* Scroll vertical si hay muchas filas */
+    overflow-x: auto; /* Scroll horizontal si hay muchas columnas */
+    margin-top: 5px; /* Acercar más la tabla al botón */
+    display: flex;
+    justify-content: center;
+}
+
+/* Tabla */
+.table {
+    width: 85%; /* Reducir más el tamaño de la tabla */
+    max-width: 900px; /* Evitar que se estire demasiado en pantallas grandes */
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera de la tabla */
+.table th {
+    background: #f8b400;
+    color: white;
+    font-weight: 600;
+    padding: 8px;
+    text-align: center;
+    font-size: 0.85rem; /* Hacer el texto más compacto */
+}
+
+/* Celdas de la tabla */
+.table td {
+    padding: 6px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/* Botón Editar */
+.btn-info {
+    background: #f8b400;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.btn-info:hover {
+    background: #d89c00;
+    transform: scale(1.05);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .table {
+        width: 100%; /* Permitir que se ajuste en pantallas pequeñas */
+    }
+
+    .table th, .table td {
+        padding: 5px;
+        font-size: 0.75rem;
+    }
+
+    .btn-info {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+}

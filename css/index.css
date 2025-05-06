@@ -1,7 +1,7 @@
 /* ===== FUENTES Y ESTILOS BASE ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
-
+/* ===== ESTILOS GENERALES ===== */
 :root {
     --color-primario: #f8b400;
     --color-fondo-oscuro: #1a1a1a;
@@ -22,7 +22,6 @@ body {
     min-height: 100vh;
     display: flex;
 }
-
 /* ===== NAVBAR VERTICAL ===== */
 .navbar-vertical {
     width: 250px;
@@ -46,8 +45,10 @@ body {
     color: var(--color-primario);
     font-size: 1.5rem;
     font-weight: 600;
+    
 }
 
+/* Sección Mi Usuario */
 .user-section {
     padding: 1rem 1.5rem;
     margin-top: auto;
@@ -89,6 +90,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
 }
 
+/* Menú desplegable mejorado */
 .dropdown {
     position: relative;
 }
@@ -136,109 +138,15 @@ body {
     gap: 0.5rem;
     justify-content: center;
 }
-
-/* ===== CONTENIDO PRINCIPAL ===== */
-.content {
-    margin-left: 250px;
-    padding: 2rem 3rem;
-    width: calc(100% - 250px);
-    overflow: visible;
-}
-
-/* ===== TABLA CENTRADA Y RESPONSIVE ===== */
-.table-container {
-    background: white;
-    border-radius: 12px;
-    overflow-x: auto;
-    box-shadow: var(--sombra);
-    margin: 20px 20px 20px 350px;
-    width: calc(100% - 300px);
-    min-height: 500px;
-    max-height: 80vh;
-    scrollbar-width: thin;
-}
-
-.table-moderna {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-}
-
-.table-moderna thead {
-    background: var(--color-primario);
-}
-
-.table-moderna th {
-    padding: 1rem 1.25rem;
-    text-align: left;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--color-fondo-oscuro);
-    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-}
-
-.table-moderna td {
-    padding: 0.9rem 1.25rem;
-    color: #444;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.table-moderna tr:last-child td {
-    border-bottom: none;
-}
-
-.table-moderna tr:hover td {
-    background: #fffaf0;
-}
-
-/* Columnas específicas */
-.table-moderna td:nth-child(1),
-.table-moderna td:nth-child(4),
-.table-moderna td:nth-child(5),
-.table-moderna td:nth-child(6) {
-    font-family: 'Roboto Mono', monospace;
-    color: #666;
-}
-
-/* Botones de acción */
-.action-buttons {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-end;
-}
-
-.btn-accion {
-    width: 34px;
-    height: 34px;
-    border: none;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    background: rgba(0, 0, 0, 0.05);
-}
-
-.btn-accion:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--sombra);
-}
-
-.btn-editar {
-    color: #007bff;
-}
-
-.btn-eliminar {
-    color: #dc3545;
-}
-
 /* ===== RESPONSIVIDAD ===== */
 @media (max-width: 1200px) {
     .table-container {
-        width: calc(100% - 100px);
-        margin: 20px auto;
+        width: 100%;
+        margin: 1rem 0;
+    }
+    
+    .content {
+        padding: 1rem;
     }
 }
 
@@ -248,29 +156,23 @@ body {
         height: auto;
         position: relative;
     }
-
+    
     .content {
         margin-left: 0;
         width: 100%;
-        padding: 1rem;
     }
-
-    .table-container {
-        width: 95%;
-        margin: 1rem auto;
-    }
-
+    
     .table-moderna {
         font-size: 0.8rem;
     }
-
+    
     .table-moderna th, 
     .table-moderna td {
         padding: 0.75rem;
     }
 }
 
-/* ===== SCROLLBAR ===== */
+/* Scrollbar personalizada */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -284,7 +186,6 @@ body {
     background: var(--color-primario);
     border-radius: 4px;
 }
-
 /* ===== MENÚ PLEGABLE ===== */
 .nav-item {
     position: relative;
@@ -298,7 +199,7 @@ body {
 }
 
 .submenu.active {
-    max-height: 200px;
+    max-height: 200px; /* Ajusta según necesidad */
 }
 
 .submenu a {
@@ -312,4 +213,73 @@ body {
 
 .submenu a:hover {
     color: var(--color-primario);
+}
+/* Notificaciones de Stock */
+.stock-alerts {
+    margin-top: 40px; /* Espacio entre el contenido principal y las alertas */
+}
+
+.stock-alerts h2 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.alerta-stock {
+    background-color: #fff;
+    border-left: 5px solid #ff0000;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.alerta-stock h4 {
+    color: #000;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.alerta-stock h4 i {
+    margin-right: 10px;
+}
+
+.alerta-stock ul {
+    list-style: none;
+    padding: 0;
+}
+
+.alerta-stock li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    color: #333;
+}
+
+.alerta-stock li:last-child {
+    border-bottom: none;
+}
+
+.alerta-stock li strong {
+    color: #000;
+}
+
+.alerta-stock.success {
+    border-left: 5px solid #28a745;
+    background-color: #fff;
+}
+
+.alerta-stock.success h4 {
+    color: #28a745;
+}
+
+.alerta-stock.success p {
+    color: #333;
+    margin: 0;
+    font-size: 1rem;
 }
